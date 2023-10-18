@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&family=Viga&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import url(https://db.onlinewebfonts.com/c/6138beb83221f6eb46ed08543a304d1d?family=Twentieth+Century);
+
+:root {
+  --bg-dark-blue: #081b29;
+  --bg-liht-blue: #00ddff;
+  --color-text: #e2e8f0;
+  --purple: #6b21a8;
+  --pink: #d946ef;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Twentieth Century", sans-serif;
+  background: linear-gradient(45deg, var(--bg-dark-blue), var(--pink));
+  color: var(--color-text);
+}
+
+.offcanvas{
+  background: linear-gradient(-45deg, var(--bg-dark-blue), var(--pink));
+
+}
+
+nav{
+  background: linear-gradient(45deg, var(--bg-dark-blue), var(--pink));}
+
+.nav-item .nav-link.active{
+  color: var(--color-text);
+}
+
+.nav-item .nav-link, .navbar-brand{
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+  font-size: 1.2rem;
+}
+
+#zx h1{
+  font-size: 5.5rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+ 
+}
+
+#zx h2{
+  font-size: 2rem;
+  font-weight: bold;
+  
+}
+
+
+
+
+#zx .btn-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 3rem;
+  background-size: 300% 300%;
+  backdrop-filter: blur(1rem);
+  border-radius: 2rem;
+  transition: 0.5s;
+  animation: animasiWarnaButton 4s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(var(--bg-liht-blue), var(--pink)), linear-gradient(137.48deg, var(--purple) 10%, var(--pink) 35%, var(--bg-liht-blue) 57%, var(--purple) 77%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+#zx .container-btn {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 4rem;
+}
+
+#zx strong {
+  z-index: 2;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  color: var(--color-text);
+  text-shadow: 0 0 5px var(--bg-dark-blue);
+  margin-left: 5px;
+  display: flex;
+  text-align: center;
+}
+
+#zx .container-strng {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+#zx .particle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: styleParticle 4s infinite;
+  z-index: -1;
+}
+
+#zx .particle:nth-of-type(1) {
+  background: var(--bg-liht-blue);
+}
+
+#zx .particle:nth-of-type(2) {
+  background: var(--pink);
+}
+
+#zx .btn-home:hover .container-btn {
+  z-index: 1;
+}
+
+#zx .btn-home:hover {
+  transform: scale(1.05);
+  filter: none;
+  backdrop-filter: none;
+}
+
+#zx .btn-home:active {
+  border: double 4px var(--bg-liht-blue);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+#zx .btn-home:active .particle {
+  background: var(--bg-liht-blue);
+}
+
+#zx .btng {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+#zx .btng::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animasiRotasiBintang 70s linear infinite;
+}
+
+#zx .btng::after {
+  background-image: radial-gradient(var(--color-text) 2px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+#zx .btng::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animasiBintang 50s linear infinite;
+}
+
+#zx .btng::before {
+  background-image: radial-gradient(var(--color-text) 2px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animasiBintang {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animasiRotasiBintang {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes animasiWarnaButton {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes styleParticle {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
